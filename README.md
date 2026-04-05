@@ -136,6 +136,3 @@ GitHub: [https://github.com/Neel-2002](https://github.com/Neel-2002)
 ⭐ If you like this project, don’t forget to star the repo!
 
 ```
-
-Just tell me 👍
-```
