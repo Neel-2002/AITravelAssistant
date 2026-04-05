@@ -1,24 +1,36 @@
-
 # ✈️ AI Travel Assistant
 
-An intelligent travel planning app that creates personalized holiday itineraries using AI 🤖
+An intelligent AI-powered travel planner that generates personalized holiday itineraries using LLMs, vector search, and modern web technologies 🤖🌍
 
 ---
 
 ## 🌍 Overview
 
-AI Travel Assistant helps users plan trips effortlessly by generating customized travel itineraries based on preferences. It combines LLMs, vector search, and modern web frameworks to deliver smart, context-aware recommendations.
+AI Travel Assistant is an intelligent travel planning application that helps users design personalized holiday itineraries effortlessly. Built using FastAPI, Streamlit, and LangChain, the system leverages vector search and Hugging Face language models to understand user preferences and generate context-aware travel plans.
+
+The application processes travel-related data through embedding and vectorization techniques, enabling efficient semantic search and retrieval. By combining LLM-powered reasoning with structured data, it can recommend destinations, create day-wise schedules, and adapt plans based on user input.
+
+Key features include:
+
+* Personalized itinerary generation using LLMs
+* Semantic search with vector embeddings
+* Interactive UI powered by Streamlit
+* FastAPI backend for scalable API integration
+* Modular architecture using LangChain components
+
+This project demonstrates the integration of modern AI tools to build a smart, end-to-end travel planning assistant.
+
 
 ---
 
 ## 🚀 Features
 
-✨ Personalized itinerary generation  
-🧠 LLM-powered travel recommendations  
-🔍 Semantic search using vector embeddings  
-📅 Day-wise trip planning  
+✨ Personalized travel itinerary generation  
+🧠 LLM-powered intelligent responses  
+🔍 Semantic search with vector embeddings  
+📅 Smart day-wise planning  
+⚡ FastAPI backend for scalable APIs  
 🌐 Interactive UI with Streamlit  
-⚡ FastAPI backend for scalability  
 
 ---
 
@@ -28,8 +40,8 @@ AI Travel Assistant helps users plan trips effortlessly by generating customized
 - **Backend:** FastAPI  
 - **LLM:** Hugging Face Transformers  
 - **Framework:** LangChain  
-- **Vector DB:** (FAISS / Chroma / your choice)  
-- **Embeddings:** Sentence Transformers  
+- **Embeddings:** Sentence Transformers (Hugging face LLm Model)
+- **Vector Store:** Qdrant
 
 ---
 
@@ -37,12 +49,16 @@ AI Travel Assistant helps users plan trips effortlessly by generating customized
 
 ```
 
-AiTravelAssistant/
+AITravelAssistant/
 │── src/
-│   ├── main.py          # FastAPI entry point
-│   ├── ingest.py        # Data ingestion & vectorization
-│   ├── generator.py     # LLM response generation
-│── app.py               # Streamlit UI
+│   ├── app.py            # Streamlit frontend
+│   ├── main.py           # FastAPI entry point
+│   ├── config.py         # Configuration settings
+│   ├── embeddings.py     # Embedding model setup
+│   ├── ingest.py         # Data ingestion & preprocessing
+│   ├── retriever.py      # Semantic retrieval logic
+│   ├── vectorstores.py   # Vector DB handling
+│   ├── generator.py      # LLM response generation
 │── requirements.txt
 │── README.md
 
@@ -75,48 +91,56 @@ pip install -r requirements.txt
 
 ## ▶️ Running the Application
 
-### Start FastAPI server
+### Start FastAPI backend
 
 ```bash
 uvicorn src.main:app --reload
 ```
 
-### Start Streamlit app
+### Start Streamlit frontend
 
 ```bash
-streamlit run app.py
+streamlit run src/app.py
 ```
 
 ---
 
 ## 🧠 How It Works
 
-1. 📄 Travel data is ingested and split into chunks
-2. 🔢 Text is converted into embeddings
-3. 📦 Stored in a vector database
-4. 🔍 User query is matched using semantic search
-5. 🤖 LLM generates a personalized response
+1. 📄 Data ingestion via `ingest.py`
+2. ✂️ Text splitting & preprocessing
+3. 🔢 Embeddings generated using transformer models
+4. 📦 Stored in vector database
+5. 🔍 Query processed via retriever
+6. 🤖 LLM generates final travel plan
 
 ---
 
-## 📸 Demo (Optional)
+## 🔄 Workflow Architecture
 
-*Add screenshots or GIFs here*
+```
+User Input → Streamlit UI → FastAPI → Retriever → Vector DB
+                                         ↓
+                                      LLM (Generator)
+                                         ↓
+                                   Final Response
+```
 
 ---
 
 ## 🔮 Future Improvements
 
 * 🌐 Multi-language support
-* 🗺️ Map integration
+* 🗺️ Map & location integration
+* ✈️ Real-time travel APIs (flights, hotels)
 * 📱 Mobile-friendly UI
-* ✈️ Real-time flight & hotel APIs
+* 🧾 Export itinerary as PDF
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to fork the repo and submit a PR.
+Contributions are welcome! Feel free to fork the repo and submit a pull request.
 
 ---
 
@@ -133,6 +157,6 @@ GitHub: [https://github.com/Neel-2002](https://github.com/Neel-2002)
 
 ---
 
-⭐ If you like this project, don’t forget to star the repo!
+⭐ If you found this project useful, please give it a star!
 
 ```
