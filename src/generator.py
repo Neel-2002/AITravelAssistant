@@ -31,7 +31,7 @@ if MODEL_PROVIDER == "huggingface":
     tokenizer = AutoTokenizer.from_pretrained(model_id)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_id)
     pipe = pipeline(
-        "text2text-generation",
+        "text-generation",
         model=model,
         tokenizer=tokenizer,
         max_new_tokens=256,
